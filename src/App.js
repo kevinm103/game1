@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Background from './components/Background';
+import On from './components/On';
 
 function App() {
+  const [buttonStates, setButtonStates] = useState(Array(8).fill(true)); // Change from false to true
+
+  const toggleButton = index => {
+    const newButtonStates = [...buttonStates];
+    newButtonStates[index] = !newButtonStates[index];
+    console.log(newButtonStates); // Log the new button states
+    setButtonStates(newButtonStates);
+  };
+  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Background />
+
+      <div className="buttons-container">
+      {console.log(buttonStates)}
+{buttonStates.map((isVisible, index) => (
+  <div key={index} className="On-container" onClick={() => toggleButton(index)}>
+    {console.log(`Button ${index} visibility: ${isVisible}`)}
+    {isVisible && <On />}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

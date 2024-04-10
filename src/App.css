@@ -1,38 +1,27 @@
-.App {
-  text-align: center;
+.Background {
+  position: relative; /* Make sure the background is positioned relative */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* Add any additional styling for your Background component here */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.buttons-container {
+  position: absolute; /* Position the buttons container relative to the background */
+  top: 0; /* Align to the top of the background */
+  left: 20px; /* Adjust the left position as needed */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: flex-start; /* Align items to the start (left side) */
 }
 
-.App-link {
-  color: #61dafb;
+.On-container {
+  margin-bottom: 5px; /* Add margin between button containers */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.On {
+  height: 95px; /* Set a fixed height for the buttons */
+  width: 98px; /* Set a fixed width for the buttons */
+  margin-top: 11px;
 }
