@@ -1,27 +1,52 @@
-.Background {
-  position: relative; /* Make sure the background is positioned relative */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  /* Add any additional styling for your Background component here */
+/* App.css */
+
+.fixedContainer {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 1000;
+  display: flex;           /* Makes children flex items */
+  flex-direction: column;  /* Align children vertically */
+  align-items: center;     /* Center items horizontally */
+  gap: 20px;               /* Space between each item */
 }
 
-.buttons-container {
-  position: absolute; /* Position the buttons container relative to the background */
-  top: 0; /* Align to the top of the background */
-  left: 20px; /* Adjust the left position as needed */
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Align items to the start (left side) */
+
+.toggleButtonImg {
+  width: 100px; /* Set the width of the images */
+  height: 100px; /* Set the height of the images */
+  cursor: pointer; /* Change cursor to pointer on hover over the image */
+  display: block; /* Ensures that the image does not have inline properties */
 }
 
-.On-container {
-  margin-bottom: 5px; /* Add margin between button containers */
+.triangleShape {
+  width: 70px;
+  height: 70px;
+  position: fixed;
+  left: 25%;  /* Adjust this value as needed to position correctly */
+  top:35%;   /* Adjust this value as needed to position correctly */
+  transform: translate(-50%, -50%);
+  z-index: 1000;
 }
 
-.On {
-  height: 95px; /* Set a fixed height for the buttons */
-  width: 98px; /* Set a fixed width for the buttons */
-  margin-top: 11px;
+.squareShape {
+  width: 70px;
+  height: 70px;
+  position: fixed;
+  left: 25%;  /* Adjust this value as needed to position correctly */
+  top: 62.5%;   /* Adjust this value as needed to position correctly */
+  transform: translate(-50%, -50%);
+  z-index: 1000;
 }
+
+.lightBulb {
+  width: 100px; /* Set width as needed */
+  height: 100px; /* Set height as needed */
+  position: fixed;
+  right: 40%; /* Align to the right edge of the viewport */
+  top: 48.75%; /* Center vertically */
+  transform: translateY(-50%); /* Adjust vertical alignment */
+  z-index: 1000; /* Ensures it stays on top of other content */
+}
+
